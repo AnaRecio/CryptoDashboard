@@ -1,91 +1,133 @@
-Crypto Dashboard
+# Crypto Dashboard
 
-Full-stack crypto dashboard application.
+A full-stack cryptocurrency dashboard for ingesting, storing, and visualizing real-time market data.
 
-Backend: FastAPI + SQLAlchemy + Alembic + PostgreSQL
+---
 
-Frontend: React (Vite) + Recharts
+## Tech Stack
 
-Features
+Backend:
+- FastAPI
+- SQLAlchemy
+- Alembic
+- PostgreSQL
+- CoinGecko API
 
-Ingest top market coins from CoinGecko into PostgreSQL
+Frontend:
+- React (Vite)
+- Recharts
+- JavaScript / TypeScript
 
-Store coin metadata and time-series price snapshots
+---
 
-View a top market table with prices, market cap, volume, and 24h change
+## Features
 
-Click a coin to view its historical price chart
+- Ingest top market coins from CoinGecko into PostgreSQL
+- Store coin metadata and time-series price snapshots
+- View a top market table with prices, market cap, volume, and 24h change
+- Click any coin to view its historical price chart
 
-Requirements
+---
 
-Python 3.10+
+## Requirements
 
-Node.js 18+
+- Python 3.10+
+- Node.js 18+
+- PostgreSQL (local)
 
-PostgreSQL (local)
+---
 
-Backend Setup
-1) Create virtual environment and install dependencies
+## Backend Setup
 
+Create a virtual environment and install dependencies:
+
+```bash
 cd backend
 python -m venv .venv
+```
 
-Windows:
+Activate the virtual environment (Windows):
+
+```bash
 .venv\Scripts\activate
+```
 
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-2) Configure environment variables
+Create the environment file `backend/.env`:
 
-Create the file backend/.env:
-
+```env
 DATABASE_URL=postgresql+psycopg2://USER:PASSWORD@localhost:5433/crypto_dashboard
 CG_API_KEY=YOUR_COINGECKO_KEY
+```
 
 Make sure PostgreSQL is running and the database exists.
 
-3) Run database migrations
+Run database migrations:
 
+```bash
 alembic upgrade head
+```
 
-4) Run the API server
+Run the API server:
 
+```bash
 uvicorn app.main:app --reload
+```
 
-API: http://localhost:8000
+API:
+- http://localhost:8000  
+- Docs: http://localhost:8000/docs  
 
-API Docs: http://localhost:8000/docs
+---
 
-Frontend Setup
-1) Install dependencies
+## Frontend Setup
 
+Install dependencies:
+
+```bash
 cd frontend
 npm install
+```
 
-2) Configure environment variables
+Create the environment file `frontend/.env`:
 
-Create the file frontend/.env:
-
+```env
 VITE_API_BASE_URL=http://localhost:8000
+```
 
-3) Run the frontend
+Run the frontend:
 
+```bash
 npm run dev
+```
 
-Frontend: http://localhost:5173
+Frontend:
+- http://localhost:5173  
 
-Usage
+---
 
-Start the backend server
+## ▶Usage
 
-Start the frontend application
+1. Start the backend server
+2. Start the frontend application
+3. Click **Ingest Market Data** to store market snapshots
+4. Click any coin in the table to view its price history chart
 
-Click Ingest Market Data to store market snapshots
+---
 
-Click any coin in the table to view its price history chart
+##  Notes
 
-Notes
+- `.env` files are ignored by git and must not be committed
+- Update the PostgreSQL port in `DATABASE_URL` if needed
+- This project is intended for local development but is production-ready
 
-.env files are ignored by git and should not be committed
+---
 
-Update the PostgreSQL port in DATABASE_URL if needed
+##  Author
+
+Built as a full-stack learning and portfolio project.
