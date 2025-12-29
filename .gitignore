@@ -1,0 +1,72 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# =========================
+# Secrets / env
+# =========================
+.env
+*.env
+**/.env
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+
+.venv/
+venv/
+env/
+
+*.egg-info/
+dist/
+build/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Frontend (Vite/React)
+# =========================
+node_modules/
+dist/
+.vite/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Backend runtime / misc
+# =========================
+backend/.python-version
+*.sqlite3
+
+# =========================
+# IMPORTANT: Alembic / migrations
+# =========================
+# DO NOT ignore migrations/versions/ (you want your migration scripts in git)
+# If you had this before, remove it:
+# alembic/versions/
+# migrations/versions/
+
+# Ignore only local DB artifacts if any
+alembic.ini.sample
+alembic.ini.local
