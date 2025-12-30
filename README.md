@@ -111,7 +111,7 @@ Frontend:
 
 ---
 
-## ▶Usage
+## Usage
 
 1. Start the backend server
 2. Start the frontend application
